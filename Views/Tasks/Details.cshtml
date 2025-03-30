@@ -1,0 +1,11 @@
+﻿@model TaskManagementSystem.Models.Tasks
+
+<h2>Task Details</h2>
+
+<div>
+    <h3>Name: @Model.Name</h3>
+    <h4>Description: @Model.Description</h4>
+    <h5>Description: @Model.DueDate</h5>
+</div>
+
+<a href="@Url.Action("Index", "Tasks")">Back to Task List</a>
