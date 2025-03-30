@@ -19,19 +19,20 @@
     <tbody>
         @foreach (var task in Model)
         {
-            <tr>
+            string rowClass = task.DueDate < DateTime.Now ? "table-danger" : "";
+            <tr class="@rowClass">
                 <td>@task.Id</td>
                 <td>@task.Name</td>
                 <td>@task.Description</td>
-                <td>@task.DueDate</td>
+                <td>@task.DueDate.ToString("yyyy-MM-dd HH:mm")</td>
                 <td>
-                    <a href="@Url.Action("Details", "Student", new { id = task.Id })">View Details</a>
+                    <a href="@Url.Action("Details", "Tasks", new { id = task.Id })">View Details</a>
                 </td>
                 <td>
-                    <a href="@Url.Action("Edit", "Student", new { id = task.Id })">Edit</a>
+                    <a href="@Url.Action("Edit", "Tasks", new { id = task.Id })">Edit</a>
                 </td>
                 <td>
-                    <a href="@Url.Action("Delete", "Student", new { id = task.Id })">Delete</a>
+                    <a href="@Url.Action("Delete", "Tasks", new { id = task.Id })">Delete</a>
                 </td>
             </tr>
         }

@@ -17,7 +17,7 @@ namespace TaskManagementSystem.Controllers
         public IActionResult Index()
         {
             var tasks = _context.Tasks.ToList();
-            return View();
+            return View(tasks);
         }
 
         // GET: Task/Details
